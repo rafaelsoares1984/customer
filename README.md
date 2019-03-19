@@ -1,4 +1,4 @@
-# customer
+# Customer
 This repository is part of a test for a company, he contains a app REST.
 
 Simple CRUD application of customer. 
@@ -8,7 +8,7 @@ Application was developed by Rafael Soares.
 ##  URL of project
 
     This app has some urls
-
+    
   - **Service - API** [http://localhost:8080/api/customer]  
   - **Swagger - Documentation of API** [http://localhost:8080/swagger-ui.html] 
   - **H2 - Database** [http://localhost:8080/h2] 
@@ -60,6 +60,7 @@ Application was developed by Rafael Soares.
         }'`
     
   - **DELETE** [http://localhost:8080/api/customer/{customerId}] Remove a custmer
+  
     `curl -X POST \
         http://localhost:8080/api/customer/1 \
         -H 'Content-Type: application/json' \
