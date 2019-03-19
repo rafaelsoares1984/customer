@@ -144,9 +144,9 @@ Application developed by Rafael Soares.
           `mv apache-tomcat-9.0.17 tomcat9` <br>
 
         **Set Tomcat up for it work**<br>
-          Create Script of start apache on /etc/init.d<br>
+          Create Script automatically start apache on /etc/init.d<br>
              `#!/bin/sh `<br>
-             `echo Inicializa tomcat `<br>
+             `echo Start Tomcat `<br>
              `export JAVA_HOME=/opt/java `<br>
              `/opt/tomcat9/bin/catalina.sh start`<br>
           And change permission<br>
