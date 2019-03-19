@@ -13,7 +13,7 @@ Application was developed by Rafael Soares.
   - **Swagger - Documentation of API** [http://localhost:8080/swagger-ui.html] 
   - **H2 - Database** [http://localhost:8080/h2] 
 
-# Functionalities of Application Endpoints
+# Functionalities of application endpoints
 
    Some Endpoints:
 
