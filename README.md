@@ -17,59 +17,57 @@ Application was developed by Rafael Soares.
 
     Some Endpois:
 
-  - **GET** [http://localhost:8080/api/customer] - List all customer
-   
-    `curl -X GET \
-        http://localhost:8080/api/customer/ \
-        -H 'Postman-Token: 0483fb3a-d9db-4f17-98a5-d2c3cc2987fa' \
-        -H 'cache-control: no-cache'`
+  - **GET** [http://localhost:8080/api/customer] - List all customers<br>
+     `curl -X GET \`<br>
+        `http://localhost:8080/api/customer/ \`<br>
+        `-H 'Postman-Token: 0483fb3a-d9db-4f17-98a5-d2c3cc2987fa' \`<br>
+        `-H 'cache-control: no-cache'`<br>
 
-  - **GET** [http://localhost:8080/api/customer/`{cusmoterId}`] - Get a specific customer
+  - **GET** [http://localhost:8080/api/customer/`{cusmoterId}`] - Get a specific customer<br>
+     `curl -X GET \`<br>
+        `http://localhost:8080/api/customer/1 \`<br>
+        `-H 'Postman-Token: 0483fb3a-d9db-4f17-98a5-d2c3cc2987fa' \`<br>
+        `-H 'cache-control: no-cache'`<br>
 
-    `curl -X GET \
-        http://localhost:8080/api/customer/1 \
-        -H 'Postman-Token: 0483fb3a-d9db-4f17-98a5-d2c3cc2987fa' \
-        -H 'cache-control: no-cache'`
-
-  - **POST** [http://localhost:8080/api/customer] Create a new customer
+  - **POST** [http://localhost:8080/api/customer] Create a new customer<br>
   
-    Body ` { "name":"test","age":99}`
+    Body ` { "name":"test","age":99}`<br>
 
-    `curl -X POST \
-        http://localhost:8080/api/customer \
-        -H 'Content-Type: application/json' \
-        -H 'Postman-Token: 3b8a8032-efe0-4dae-b069-ca2993c7c578' \
-        -H 'cache-control: no-cache' \
-        -d '{
-            "name":"test",
-            "age":99
-        }'`
+    `curl -X POST \`<br>
+        `http://localhost:8080/api/customer \`<br>
+        `-H 'Content-Type: application/json' \`<br>
+        `-H 'Postman-Token: 3b8a8032-efe0-4dae-b069-ca2993c7c578' \`<br>
+        `-H 'cache-control: no-cache' \`<br>
+        `-d '{`<br>
+            `"name":"test",`<br>
+            `"age":99`<br>
+        `}'`<br>
 
-  - **PUT** [http://localhost:8080/api/customer/`{customerId}`] Change a specific customer with customerId
+  - **PUT** [http://localhost:8080/api/customer/`{customerId}`] Change a specific customer with customerId<br>
   
-    Body `{ "name":"test", "age":40 }`
+    Body `{ "name":"test", "age":40 }`<br>
 
-    `curl -X PUT \
-        http://localhost:8080/api/customer/100 \
-        -H 'Content-Type: application/json' \
-        -H 'Postman-Token: c6f68786-d6ba-48f9-9bd5-3ac5a67e7a15' \
-        -H 'cache-control: no-cache' \
-        -d '{
-            "name":"test",
-            "age":40
-        }'`
+    `curl -X PUT \`<br>
+        `http://localhost:8080/api/customer/100 \`<br>
+        `-H 'Content-Type: application/json' \`<br>
+        `-H 'Postman-Token: c6f68786-d6ba-48f9-9bd5-3ac5a67e7a15' \`<br>
+        `-H 'cache-control: no-cache' \`<br>
+        `-d '{`<br>
+            `"name":"test",`<br>
+            `age":40`<br>
+        `}'`<br>
     
-  - **DELETE** [http://localhost:8080/api/customer/{customerId}] Remove a custmer
+  - **DELETE** [http://localhost:8080/api/customer/{customerId}] Remove a custmer<br>
   
-    `curl -X POST \
-        http://localhost:8080/api/customer/1 \
-        -H 'Content-Type: application/json' \
-        -H 'Postman-Token: 55f12393-9d51-416a-9c0f-c87b487ee529' \
-        -H 'cache-control: no-cache' \
-        -d '{
-            "name":"teste",
-            "age":34
-        }'`
+    `curl -X POST \`<br>
+        `http://localhost:8080/api/customer/1 \`<br>
+        `-H 'Content-Type: application/json' \`<br>
+        `-H 'Postman-Token: 55f12393-9d51-416a-9c0f-c87b487ee529' \`<br>
+        `-H 'cache-control: no-cache' \`<br>
+        `-d '{`<br>
+            `"name":"teste",`<br>
+            `"age":34`<br>
+        `}'`<br>
 
 # Tools used for develop application
 
