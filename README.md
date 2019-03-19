@@ -3,7 +3,7 @@ This repository is part of a test for a company, it contains a REST app.
 
 Simple CRUD application of customer. 
 
-Application was developed by Rafael Soares.
+Application developed by Rafael Soares.
 
 ##  URL of project
 
