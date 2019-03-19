@@ -82,16 +82,16 @@ Application developed by Rafael Soares.
         Apache Tomcat was used as being the standard for the spring boot
    - **H2 Database**
         
-        Has no instructions sice on database usage were provided, we chose to use H2 Database, not only for being portable, but also for not requiring installation
-   - **GitHUB**
+        As no instructions on database usage were provided, we chose to use H2 Database, not only for being portable, but also for not requiring installation
+   - **Git**
         
-        Easier to use, I'm already used to it
+        Easier to use, very user-friendly
 
 # Application infrastructure
 
    - **Customer**
 
-        Customer is very easy to a build package, test and run, enough install Java version 8, Apache Tomcat more recent version, Maven, Git
+        It is very  easy to a build package, test and run it, just by installing Java version 8, Apache Tomcat(the most recent version), Maven and Git
 
         - Run
 
@@ -100,8 +100,8 @@ Application developed by Rafael Soares.
           First clone repository in your desktop<br>
           `git clone https://gitlab.com/rafael.soares1984/customer_uol.git`      
 
-          When clone is finish, enter on folder<br>
-          `cd customer_uol`
+          When clone is finished, into the folder<br>
+          `cd customer`
 
           **Unix system**<br>
           ` ./mvnw clean install`
@@ -109,19 +109,19 @@ Application developed by Rafael Soares.
           **Windows**<br>
           `./mvnw.cmd clean install`
 
-          After the command is finished, you can run other<br>
+          After the command is finished, you can run the app<br>
                `./mvnw spring-boot:run`
 
         - Test App
 
-          Enter a prompt  of command and enter the instruction<br>
+          Enter a prompt of command and enter an instruction<br>
                `mvn test`
 
         - Build App
 
-          Enter a prompt  of command and enter the instruction<br>
+          Enter a prompt of command and enter as instruction<br>
                `mvn clean install spring-boot:repackage` <br>
-          This instruction also test of app
+          This instruction also tests the app
         
         - Apache Deploy
           
