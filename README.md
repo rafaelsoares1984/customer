@@ -43,7 +43,7 @@ Application developed by Rafael Soares.
             `"age":99`<br>
         `}'`<br>
 
-  - **PUT** [http://localhost:8080/api/customer/`{customerId}`] Change a specific customer with customerId<br>
+  - **PUT** [http://localhost:8080/api/customer/`{customerId}`] Change a specific customer with customer ID<br>
   
     Body `{ "name":"test", "age":40 }`<br>
 
