@@ -117,13 +117,39 @@ Application was developed by Rafael Soares.
         - Test App
 
           Enter a promot of command and enter the instruction<br>
-               `mvn test`  or  `mvn compile-test`
+               `mvn test`
 
         - Build App
 
           Enter a promot of command and enter the instruction<br>
-               `mvn clean install spring-boot:repackage` 
+               `mvn clean install spring-boot:repackage` <br>
+          This instruction also test of app
         
         - Apache Deploy
           
           Copy file `./target/customer.war` to a deply folder of server
+          
+## Setting production
+
+    - First Install Apache Tomcat and configure DNS and IP'S on server that will respond to network calls<br>
+    
+            **Enter a prompt  and go to folder**<br>
+            - cd /opt<br>
+            
+            **Download of Tomcat**<br>
+            - wget http://ftp.unicamp.br/pub/apache/tomcat/tomcat-9/v9.0.17/bin/apache-tomcat-9.0.17.tar.gz<br>
+            
+            **Extract Tomcat**<br>
+            - tar -xvzfj apache-tomcat-9.0.17.tar.gz<br>
+            
+            **Rename Tomcat folder** <br>
+            - mv apache-tomcat-9.0.17 tomcat9 <br>
+
+            **Configure apache for reply to on a your network**
+
+    - After installation and configuration, install Java version 8 or higher, and configure JAVA_HOME of server
+        
+    - Now install GIT and Maven, these are the two that make a ninety percent of work to deploy this application on the server
+    
+    - Create script for automation proccess  or deploy of application
+    
