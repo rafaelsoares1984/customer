@@ -82,7 +82,7 @@ Application developed by Rafael Soares.
         Apache Tomcat was used as being the standard for the spring boot
    - **H2 Database**
         
-        Has no instructions sice on database usage were provided, we chose to use H2 Database, which does not require installation, as well as being portable
+        Has no instructions sice on database usage were provided, we chose to use H2 Database, not only for being portable, but also for not requiring installation
    - **GitHUB**
         
         Easier to use, I'm already used to it
