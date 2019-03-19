@@ -1,5 +1,5 @@
 # Customer
-This repository is part of a test for a company, he contains an app REST.
+This repository is part of a test for a company, it contains a REST app.
 
 Simple CRUD application of customer. 
 
