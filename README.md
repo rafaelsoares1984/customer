@@ -76,10 +76,10 @@ Application developed by Rafael Soares.
         Spring boot was used, because it is easier to group the infrastructures settings more easily
    - **Maven**
         
-        Maven is an excellent package manager, as being the standard of the spring boot
+        Maven is an excellent package manager, as being the standard for the spring boot
    - **Apache Tomcat**
         
-        Apache Tomcat as being the standard for the spring boot, was used
+        Apache Tomcat was used as being the standard for the spring boot
    - **H2 Database**
         
         Since no instructions on database usage were provided, we chose to use H2 Database, which does not require installation, as well as being portable
