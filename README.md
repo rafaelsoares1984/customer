@@ -73,7 +73,7 @@ Application developed by Rafael Soares.
 
    - **Spring Boot**
         
-        Spring boot was used, because it is easier to group the infrastructures configurations more easily
+        Spring boot was used, because it is easier to group the infrastructures settings more easily
    - **Maven**
         
         Maven is an excellent package manager, as being the standard of the spring boot
