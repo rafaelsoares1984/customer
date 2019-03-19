@@ -69,7 +69,7 @@ Application developed by Rafael Soares.
             `"age":34`<br>
         `}'`<br>
 
-# Tools used for develop application
+# Tools used to develop application
 
    - **Spring Boot**
         
