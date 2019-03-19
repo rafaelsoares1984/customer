@@ -36,8 +36,6 @@ public class CustomerServiceImpl implements CustomerService,CustomerAttributeSer
 	public void setCustomerRepository(CustomerRepository customerRepository) {
 		this.customerRepository = customerRepository;
 	}
-
-	
 	
 	public void updateCustomer(Customer customer) {
 		customerRepository.save(customer); 
@@ -71,6 +69,11 @@ public class CustomerServiceImpl implements CustomerService,CustomerAttributeSer
 	public List<Customer> retrieveCustomers() {
 		List <Customer> customers = customerRepository.findAll();
 		return customers;
+	}
+	
+	public Long findCustomerId(String name,String age) {
+		Customer customer = customerRepository.findByCustomerId(name,age);
+		return customer.getId();
 	}
 	
 	public CustomerAttributes saveCustomerAdtional(CustomerAttributes customer) {

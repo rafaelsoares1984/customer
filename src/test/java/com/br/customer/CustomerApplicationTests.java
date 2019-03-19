@@ -1,13 +1,11 @@
 package com.br.customer;
 
 import static org.junit.Assert.assertEquals;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.net.URI;
 import java.net.URISyntaxException;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -26,14 +24,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.ResultActions;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import com.br.customer.controller.CustomerRestController;
 import com.br.customer.entity.Customer;
+import com.br.customer.repository.CustomerRepository;
 
 
 
@@ -49,20 +43,23 @@ public class  CustomerApplicationTests {
 	@Autowired
 	private TestRestTemplate restTemplate;   
 	
-	long id = 2;
+
+	//long id = customerService.n;
 
 	@InjectMocks
 	private CustomerRestController customerController;
-
-
-
+	
+	@Autowired
+	private CustomerRepository customerRepository;
+	
 	
     @Test
     public void testAddCustomerSuccess() throws URISyntaxException
     {
         final String baseUrl = "http://localhost:"+randomServerPort+"/api/customer/";
         URI uri = new URI(baseUrl);
-        Customer customer = new Customer(null, "test",99);
+       
+        Customer customer = new Customer(null, "testJuit",99);
          
         HttpHeaders headers = new HttpHeaders();
         headers.set("Content-Type", MediaType.APPLICATION_JSON_VALUE);     
@@ -70,7 +67,7 @@ public class  CustomerApplicationTests {
         HttpEntity<Customer> request = new HttpEntity<>(customer, headers);
          
         ResponseEntity<String> result = this.restTemplate.postForEntity(uri, request, String.class);
-         
+          
         //Verify request succeed
         Assert.assertEquals(200, result.getStatusCodeValue());
     }    
@@ -104,7 +101,7 @@ public class  CustomerApplicationTests {
        
         //Verify request succeed
         Assert.assertEquals(200, result.getStatusCodeValue());
-        Assert.assertEquals(true, result.getBody().contains("test"));
+        Assert.assertEquals(true, result.getBody().contains("testJuit"));
     }
 
     @Test
@@ -134,35 +131,39 @@ public class  CustomerApplicationTests {
     @Test
     public void testListCustomerWithIDSuccess () throws URISyntaxException
     {
-        
-        final String baseUrl = "http://localhost:"+randomServerPort+"/api/customer/"+id;
+
+    	final Customer customerId =  customerRepository.findByCustomerId("testJuit","99");
+    	
+        final String baseUrl = "http://localhost:"+randomServerPort+"/api/customer/"+customerId.getId();
         URI uri = new URI(baseUrl);
         
         ResponseEntity<String> result = this.restTemplate.getForEntity(uri, String.class);
          
         //Verify request succeed
         Assert.assertEquals(200, result.getStatusCodeValue());
-        Assert.assertEquals(true, result.getBody().contains("test"));
+        Assert.assertEquals(true, result.getBody().contains("testJuit"));
     }
     
     @Test
     public void testUpdateCustomerSuccess() throws Exception {
-
-	      final String baseUrl = "http://localhost:"+randomServerPort+"/api/customer/"+id;
-	      URI uri = new URI(baseUrl);
     	
-		  Customer customer = new Customer(2l, "test", 99);
-		  HttpEntity<Customer> requestEntity = new HttpEntity<Customer>(customer);
+    	final Customer customerId =  customerRepository.findByCustomerId("testJuit","99");
+    	
+	    final String baseUrl = "http://localhost:"+randomServerPort+"/api/customer/"+customerId.getId();
+	    URI uri = new URI(baseUrl);
+    	
+		Customer customer = new Customer(2l, "testJuit", 55);
+		HttpEntity<Customer> requestEntity = new HttpEntity<Customer>(customer);
 		 
-		  // execute
-		  ResponseEntity<Void> responseEntity = restTemplate.exchange(uri, 
-		  HttpMethod.PUT, 
+		// execute
+		ResponseEntity<Void> responseEntity = restTemplate.exchange(uri, 
+		HttpMethod.PUT, 
 		  requestEntity, 
 		  Void.class);
 		 
-		  // verify
-		  int status = responseEntity.getStatusCodeValue();
-		  assertEquals("Incorrect Response Status", HttpStatus.OK.value(), status);
+		// verify
+		int status = responseEntity.getStatusCodeValue();
+		assertEquals("Incorrect Response Status", HttpStatus.OK.value(), status);
     }
     
     @Test
@@ -171,7 +172,7 @@ public class  CustomerApplicationTests {
 	      final String baseUrl = "http://localhost:"+randomServerPort+"/api/customer/0";
 	      URI uri = new URI(baseUrl);
   	
-		  Customer customer = new Customer(0l, "test", 99);
+		  Customer customer = new Customer(0l, "testJuit", 99);
 		  HttpEntity<Customer> requestEntity = new HttpEntity<Customer>(customer);
 		 
 		  // execute
@@ -186,32 +187,33 @@ public class  CustomerApplicationTests {
   }
 
   @Test
-  public void testDeleteCustomerSuccess() throws Exception {
-
-	      final String baseUrl = "http://localhost:"+randomServerPort+"/api/customer/"+id;
-	      URI uri = new URI(baseUrl);
+  public void testZDeleteCustomerSuccess() throws Exception {
+		
+	  	final Customer customerId =  customerRepository.findByCustomerId("testJuit","55");
+	  
+	    final String baseUrl = "http://localhost:"+randomServerPort+"/api/customer/"+customerId.getId();
+	    URI uri = new URI(baseUrl);
     	
-		  Customer customer = new Customer(2l, "test", 99);
-		  HttpEntity<Customer> requestEntity = new HttpEntity<Customer>(customer);
+		HttpEntity<Customer> requestEntity = new HttpEntity<Customer>(customerId);
 		 
-		  // execute
-		  ResponseEntity<Void> responseEntity = restTemplate.exchange(uri, 
-		  HttpMethod.DELETE, 
+		// execute
+		ResponseEntity<Void> responseEntity = restTemplate.exchange(uri, 
+		HttpMethod.DELETE, 
 		  requestEntity, 
 		  Void.class);
 		 
 		  // verify
-		  int status = responseEntity.getStatusCodeValue();
-		  assertEquals("Incorrect Response Status", HttpStatus.OK.value(), status);
+		int status = responseEntity.getStatusCodeValue();
+		assertEquals("Incorrect Response Status", HttpStatus.OK.value(), status);
     }
     
     @Test
-    public void testDeleteCustomerFailure() throws Exception {
+    public void testZDeleteCustomerFailure() throws Exception {
 
 	      final String baseUrl = "http://localhost:"+randomServerPort+"/api/customer/0";
 	      URI uri = new URI(baseUrl);
   	
-		  Customer customer = new Customer(0l, "test", 99);
+		  Customer customer = new Customer();
 		  HttpEntity<Customer> requestEntity = new HttpEntity<Customer>(customer);
 		 
 		  // execute

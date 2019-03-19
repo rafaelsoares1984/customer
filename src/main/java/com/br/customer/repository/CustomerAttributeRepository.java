@@ -8,6 +8,7 @@ import com.br.customer.entity.CustomerAttributes;
 @Repository
 public interface CustomerAttributeRepository extends JpaRepository<CustomerAttributes,Long> {
 
+
 }
 
 
