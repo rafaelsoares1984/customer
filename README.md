@@ -164,9 +164,10 @@ Application was developed by Rafael Soares.
         Before instalation <br>
           `vim /etc/bash.bashrc`<br>
      
-        adding the snippet below<br>
+        Adding the snippet below<br>
           `export JAVA_HOME=/opt/java` <br>
           `export PATH=/opt/java/bin:$PATH` <br>
     
    -  Create script for automation proccess  or deploy of application<br>
+   
         Script to copy war file to a /var/lib/tomcat7/webapps or other folder speficiqued in configuration.
