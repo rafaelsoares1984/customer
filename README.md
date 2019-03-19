@@ -131,25 +131,41 @@ Application was developed by Rafael Soares.
           
 ## Setting production
 
-    - First Install Apache Tomcat and configure DNS and IP'S on server that will respond to network calls<br>
+   - First Install Apache Tomcat and configure DNS and IP'S on server that will respond to network calls<br>
     
-            **Enter a prompt  and go to folder**<br>
-            - cd /opt<br>
-            
-            **Download of Tomcat**<br>
-            - wget http://ftp.unicamp.br/pub/apache/tomcat/tomcat-9/v9.0.17/bin/apache-tomcat-9.0.17.tar.gz<br>
-            
-            **Extract Tomcat**<br>
-            - tar -xvzfj apache-tomcat-9.0.17.tar.gz<br>
-            
-            **Rename Tomcat folder** <br>
-            - mv apache-tomcat-9.0.17 tomcat9 <br>
+        **Enter a prompt  and go to folder**<br>
+          `cd /opt`<br>
 
-            **Configure apache for reply to on a your network**
+        **Download of Tomcat**<br>
+          `wget http://ftp.unicamp.br/pub/apache/tomcat/tomcat-9/v9.0.17/bin/apache-tomcat-9.0.17.tar.gz`<br>
 
-    - After installation and configuration, install Java version 8 or higher, and configure JAVA_HOME of server
+        **Extract Tomcat**<br>
+          `tar -xvzfj apache-tomcat-9.0.17.tar.gz`<br>
+
+        **Rename Tomcat folder** <br>
+          `mv apache-tomcat-9.0.17 tomcat9` <br>
+
+        **Configure apache for reply to on a your network**<br>
+          Create Script of start apache on /etc/init.d<br>
+             `#!/bin/sh `<br>
+             `echo Inicializa tomcat `<br>
+             `export JAVA_HOME=/opt/java `<br>
+             `/opt/tomcat9/bin/catalina.sh start`<br>
+          And change permision<br>
+             `chmod +x tomcat`<br>
+          Add rootlevel system <br>
+             `update-rc.d tomcat defaults 99`<br>        
+          Add rootlevel default<br>
+             `ln -n tomcat /etc/rc2.d/S99tomcat `
+             
+   - After installation and configuration, install Java version 8 or higher, and configure JAVA_HOME of server<br>
         
-    - Now install GIT and Maven, these are the two that make a ninety percent of work to deploy this application on the server
+        Before instalation <br>
+          `vim /etc/bash.bashrc`<br>
+     
+        adding the snippet below 
+          `export JAVA_HOME=/opt/java` <br>
+          `export PATH=/opt/java/bin:$PATH` <br>
     
-    - Create script for automation proccess  or deploy of application
+   -  Create script for automation proccess  or deploy of application
     
