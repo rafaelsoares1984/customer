@@ -144,7 +144,7 @@ Application developed by Rafael Soares.
           `mv apache-tomcat-9.0.17 tomcat9` <br>
 
         **Set Tomcat up for it work**<br>
-          Create Script automatically start apache on /etc/init.d<br>
+          Create Script automatically start tomcat on /etc/init.d<br>
              `#!/bin/sh `<br>
              `echo Start Tomcat `<br>
              `export JAVA_HOME=/opt/java `<br>
@@ -159,7 +159,7 @@ Application developed by Rafael Soares.
         Add root level default<br>
            `ln -n tomcat /etc/rc2.d/S99tomcat `<br>
              
-       **Configure apache for reply to on your network**<br>  
+       **Set up tomcat for reply to on your network**<br>  
            Configure server name, ip, virtual network, and other for worked on your network, and folder for deploys.
              
    - After installation and configuration, install Java version 8 or higher, and configure JAVA_HOME of server<br>
