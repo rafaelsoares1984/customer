@@ -149,10 +149,13 @@ Application developed by Rafael Soares.
              `echo Start Tomcat `<br>
              `export JAVA_HOME=/opt/java `<br>
              `/opt/tomcat9/bin/catalina.sh start`<br>
-          And change permission<br>
+             
+          To change admin permission<br>
              `chmod +x tomcat`<br>
+             
           Add root level system <br>
              `update-rc.d tomcat defaults 99`<br>        
+             
           Add root level default<br>
              `ln -n tomcat /etc/rc2.d/S99tomcat `
              
