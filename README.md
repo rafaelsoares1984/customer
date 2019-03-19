@@ -1,5 +1,5 @@
 # Customer
-This repository is part of a test for a company, he contains a app REST.
+This repository is part of a test for a company, he contains an app REST.
 
 Simple CRUD application of customer. 
 
@@ -7,15 +7,15 @@ Application was developed by Rafael Soares.
 
 ##  URL of project
 
-    This app has some urls
+    This app has some URLs
     
   - **Service - API** [http://localhost:8080/api/customer]  
   - **Swagger - Documentation of API** [http://localhost:8080/swagger-ui.html] 
   - **H2 - Database** [http://localhost:8080/h2] 
 
-# Functionalities of Application - Endpoints
+# Functionalities of Application Endpoints
 
-    Some Endpois:
+   Some Endpoints:
 
   - **GET** [http://localhost:8080/api/customer] - List all customers<br>
      `curl -X GET \`<br>
@@ -57,7 +57,7 @@ Application was developed by Rafael Soares.
             `age":40`<br>
         `}'`<br>
     
-  - **DELETE** [http://localhost:8080/api/customer/{customerId}] Remove a custmer<br>
+  - **DELETE** [http://localhost:8080/api/customer/{customerId}] Remove a customer<br>
   
     `curl -X POST \`<br>
         `http://localhost:8080/api/customer/1 \`<br>
@@ -83,21 +83,21 @@ Application was developed by Rafael Soares.
    - **H2 Database**
         
         Since no instructions on database usage were provided, we chose to use H2 Database, which does not require installation, as well as being portable
-   - **Gitlab**
+   - **GitHUB**
         
         Easier to use, I'm already used to it
 
 # Application infrastructure
 
-   - **Custmoer**
+   - **Customer**
 
         Customer is very easy to a build package, test and run, enough install Java version 8, Apache Tomcat more recent version, Maven, Git
 
         - Run
 
-          Enter a prompot of command and enter the instructions
+          Enter a prompt  of command and enter the instructions
 
-          Fisrt clone repositóry in your desktop<br>
+          First clone repository in your desktop<br>
           `git clone https://gitlab.com/rafael.soares1984/customer_uol.git`      
 
           When clone is finish, enter on folder<br>
@@ -114,18 +114,18 @@ Application was developed by Rafael Soares.
 
         - Test App
 
-          Enter a promot of command and enter the instruction<br>
+          Enter a prompt  of command and enter the instruction<br>
                `mvn test`
 
         - Build App
 
-          Enter a promot of command and enter the instruction<br>
+          Enter a prompt  of command and enter the instruction<br>
                `mvn clean install spring-boot:repackage` <br>
           This instruction also test of app
         
         - Apache Deploy
           
-          Copy file `./target/customer.war` to a deply folder of server
+          Copy file `./target/customer.war` to a deploy folder of server
           
 ## Setting production
 
@@ -149,19 +149,19 @@ Application was developed by Rafael Soares.
              `echo Inicializa tomcat `<br>
              `export JAVA_HOME=/opt/java `<br>
              `/opt/tomcat9/bin/catalina.sh start`<br>
-          And change permision<br>
+          And change permission<br>
              `chmod +x tomcat`<br>
-          Add rootlevel system <br>
+          Add root level system <br>
              `update-rc.d tomcat defaults 99`<br>        
-          Add rootlevel default<br>
+          Add root level default<br>
              `ln -n tomcat /etc/rc2.d/S99tomcat `
              
-       **Configure apache for reply to on a your network**<br>  
+       **Configure apache for reply to on your network**<br>  
            Configure server name, ip, virtual network, and other for worked on your network, and folder for deploys.
              
    - After installation and configuration, install Java version 8 or higher, and configure JAVA_HOME of server<br>
         
-        Before instalation <br>
+        It Before installation  <br>
           `vim /etc/bash.bashrc`<br>
      
         Adding the snippet below<br>
