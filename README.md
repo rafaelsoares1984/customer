@@ -161,7 +161,7 @@ Application was developed by Rafael Soares.
              
    - After installation and configuration, install Java version 8 or higher, and configure JAVA_HOME of server<br>
         
-        It Before installation  <br>
+        It when installation java is done, configure JAVA_HOME  <br>
           `vim /etc/bash.bashrc`<br>
      
         Adding the snippet below<br>
