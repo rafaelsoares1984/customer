@@ -127,14 +127,14 @@ Application developed by Rafael Soares.
           
           Copy file `./target/customer.war` to a deploy folder of server
           
-## Setting production
+## Production Settings
 
-   - First Install Apache Tomcat and configure DNS and IP'S on server that will respond to network calls<br>
+   - First Install Apache Tomcat and set up DNS and IPs on server that will respond to network calls<br>
     
         **Enter a prompt  and go to folder**<br>
           `cd /opt`<br>
 
-        **Download of Tomcat**<br>
+        **Download Tomcat**<br>
           `wget http://ftp.unicamp.br/pub/apache/tomcat/tomcat-9/v9.0.17/bin/apache-tomcat-9.0.17.tar.gz`<br>
 
         **Extract Tomcat**<br>
@@ -143,7 +143,7 @@ Application developed by Rafael Soares.
         **Rename Tomcat folder** <br>
           `mv apache-tomcat-9.0.17 tomcat9` <br>
 
-        **Configure apache for work**<br>
+        **Set Tomcat up for it work**<br>
           Create Script of start apache on /etc/init.d<br>
              `#!/bin/sh `<br>
              `echo Inicializa tomcat `<br>
