@@ -145,7 +145,7 @@ Application was developed by Rafael Soares.
         **Rename Tomcat folder** <br>
           `mv apache-tomcat-9.0.17 tomcat9` <br>
 
-        **Configure apache for reply to on a your network**<br>
+        **Configure apache for work**<br>
           Create Script of start apache on /etc/init.d<br>
              `#!/bin/sh `<br>
              `echo Inicializa tomcat `<br>
@@ -158,6 +158,9 @@ Application was developed by Rafael Soares.
           Add rootlevel default<br>
              `ln -n tomcat /etc/rc2.d/S99tomcat `
              
+       **Configure apache for reply to on a your network**<br>  
+           Configure server name, ip, virtual network, and other for worked on your network, and folder for deploys;
+             
    - After installation and configuration, install Java version 8 or higher, and configure JAVA_HOME of server<br>
         
         Before instalation <br>
@@ -168,4 +171,4 @@ Application was developed by Rafael Soares.
           `export PATH=/opt/java/bin:$PATH` <br>
     
    -  Create script for automation proccess  or deploy of application
-    
+        Script to copy war file to a /var/lib/tomcat7/webapps or other folder speficiqued in configuration.
