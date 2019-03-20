@@ -150,7 +150,7 @@ Application developed by Rafael Soares.
              `export JAVA_HOME=/opt/java `<br>
              `/opt/tomcat9/bin/catalina.sh start`<br>
                   
-        To change admin permission<br>
+        Change admin permission<br>
              `chmod +x tomcat`<br>
              
         Add root level system <br>
@@ -159,10 +159,10 @@ Application developed by Rafael Soares.
         Add root level default<br>
            `ln -n tomcat /etc/rc2.d/S99tomcat `<br>
              
-       **Set up tomcat for reply to on your network**<br>  
-           Configure server name, ip, virtual network, and other for worked on your network, and folder for deploys.
+       **Set up tomcat to reply to your network**<br>  
+           Sttings server name, ip, virtual network, and other to worked on your network, and deploys folder.
              
-   - After installation and configuration, install Java version 8 or higher, and configure JAVA_HOME of server<br>
+   - After installation and settings, install Java version 8 or higher, and setting server JAVA_HOME<br>
         
         It when installation java is done, configure JAVA_HOME  <br>
           `vim /etc/bash.bashrc`<br>
