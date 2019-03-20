@@ -1,9 +1,10 @@
 package com.br.customer.service;
 
-import com.br.customer.entity.CustomerAttributes;
+import com.br.customer.entity.Attribute;
 
 public interface CustomerAttributeService {
 	
-	CustomerAttributes saveCustomerAdtional(CustomerAttributes customerAdtional);
+	Attribute saveCustomerAttributes(Attribute customerAdtional);
 
+	
 }

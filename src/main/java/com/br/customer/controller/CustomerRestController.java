@@ -1,6 +1,11 @@
 package com.br.customer.controller;
 
+import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.br.customer.entity.Customer;
-import com.br.customer.entity.CustomerAttributes;
+import com.br.customer.entity.Attribute;
 import com.br.customer.exception.NotFoundException;
 import com.br.customer.service.CustomerService;
 
@@ -75,12 +80,13 @@ public class CustomerRestController {
 	 
 	 @ApiOperation(value = "Add Customer")
 	@ApiResponses({
-        @ApiResponse(code = 201, response = CustomerAttributes.class, message = "Customer")})
+        @ApiResponse(code = 201, response = Attribute.class, message = "Customer")})
 	 @PostMapping("/api/customer")
 	 @ResponseHeader(responseContainer=MediaType.APPLICATION_JSON_VALUE)
-	 public CustomerAttributes saveCustomer(@RequestBody Customer customer){
+	 public Attribute saveCustomer(@RequestBody Customer customer, HttpServletRequest request) {
+		 String ip =getClientIpAddress(request);
 		 logger.info("Call api /api/customer/ body("+customer.toString()+") method POST");
-		 return customerService.saveCustomer(customer);
+		 return customerService.saveCustomer(customer,ip);
 	 }
 	 
 	 @ApiOperation(value = "Delete Customer by id")
@@ -107,4 +113,28 @@ public class CustomerRestController {
 	  logger.info("Customer updated with customerId="+customereId+" method PUT");
 	 }
 	 
+	 private static final String[] IP_HEADER_CANDIDATES = { 
+			    "X-Forwarded-For",
+			    "Proxy-Client-IP",
+			    "WL-Proxy-Client-IP",
+			    "HTTP_X_FORWARDED_FOR",
+			    "HTTP_X_FORWARDED",
+			    "HTTP_X_CLUSTER_CLIENT_IP",
+			    "HTTP_CLIENT_IP",
+			    "HTTP_FORWARDED_FOR",
+			    "HTTP_FORWARDED",
+			    "HTTP_VIA",
+			    "REMOTE_ADDR" 
+	 };
+
+	 public static String getClientIpAddress(HttpServletRequest request) {
+
+		for (String header : IP_HEADER_CANDIDATES) {
+	        String ip = request.getHeader(header);
+	        if (ip != null && ip.length() != 0 && !"unknown".equalsIgnoreCase(ip)) {
+	            return ip;
+	        }
+	    }
+	    return request.getRemoteAddr();
+	}
 }

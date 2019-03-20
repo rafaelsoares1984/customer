@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.br.customer.entity.Customer;
-import com.br.customer.entity.CustomerAttributes;
+import com.br.customer.entity.Attribute;
 import com.br.customer.repository.CustomerAttributeRepository;
 import com.br.customer.repository.CustomerRepository;
 import com.br.customer.service.CustomerAttributeService;
@@ -44,8 +44,8 @@ public class CustomerServiceImpl implements CustomerService,CustomerAttributeSer
 	
 	public void deleteCustomer(Long customereId) {
 		Customer Customer = this.getCustomer(customereId);
-		List<CustomerAttributes> custAttribRepository = customerAttributeRepository.findAll();
-		for (CustomerAttributes custAttrib: custAttribRepository) {
+		List<Attribute> custAttribRepository = customerAttributeRepository.findAll();
+		for (Attribute custAttrib: custAttribRepository) {
 			if( custAttrib.getCustomer().equals(Customer)){
 				customerAttributeRepository.deleteById(custAttrib.getId());
 				break;
@@ -58,9 +58,9 @@ public class CustomerServiceImpl implements CustomerService,CustomerAttributeSer
 		return optCust.get();
 	}
 	
-	public CustomerAttributes saveCustomer(Customer customer) {
+	public Attribute saveCustomer(Customer customer,String ip) {
 		customerRepository.save(customer);
-		CustomerAttributes customerAttributes =  this.saveCustomerAdtional(attributesUtil.AdtionalInfo(customer));
+		Attribute customerAttributes =  this.saveCustomerAttributes(attributesUtil.AdtionalInfo(customer,ip));
 		
 		return customerAttributes;
 		
@@ -76,11 +76,12 @@ public class CustomerServiceImpl implements CustomerService,CustomerAttributeSer
 		return customer.getId();
 	}
 	
-	public CustomerAttributes saveCustomerAdtional(CustomerAttributes customer) {
-		CustomerAttributes result = null;
+	public Attribute saveCustomerAttributes(Attribute customer) {
+		Attribute result = null;
 		if (!customer.equals(null)) {
 			result = customerAttributeRepository.save(customer);
 		}
 		return result;
-	}	
+	}
+
 }
