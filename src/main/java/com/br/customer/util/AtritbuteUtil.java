@@ -5,15 +5,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.Arrays;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
-import com.br.customer.entity.Customer;
 import com.br.customer.entity.Attribute;
+import com.br.customer.entity.Customer;
 import com.br.customer.model.Climate;
 import com.br.customer.model.CustomerAttribute;
 import com.br.customer.model.CustomerLocation;
