@@ -171,6 +171,6 @@ Application developed by Rafael Soares.
           `export JAVA_HOME=/opt/java` <br>
           `export PATH=/opt/java/bin:$PATH` <br>
     
-   -  Create script for automatic proccess on deploy <br>
+   -  Create script for automatic proccess of deploy <br>
    
         Script to copy war file to a /var/lib/tomcat7/webapps or other folder speficiqued in configuration.
