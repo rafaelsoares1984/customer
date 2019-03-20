@@ -9,9 +9,9 @@ Application developed by Rafael Soares.
 
     This app has some URLs
     
-  - **Service - API** [http://localhost:8080/api/customer]  
-  - **Swagger - Documentation of API** [http://localhost:8080/swagger-ui.html] 
-  - **H2 - Database** [http://localhost:8080/h2] 
+  - **Service - API** [http://127.0.0.1:8080/api/customer]  
+  - **Swagger - Documentation of API** [http://127.0.0.1:8080/swagger-ui.html] 
+  - **H2 - Database** [http://127.0.0.1:8080/h2] 
 
 # Functionalities of application endpoints
 
