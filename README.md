@@ -164,13 +164,13 @@ Application developed by Rafael Soares.
              
    - After installation and settings, install Java version 8 or higher, and setting server JAVA_HOME<br>
         
-        It when installation java is done, configure JAVA_HOME  <br>
+        When java installation is done, settings JAVA_HOME <br>
           `vim /etc/bash.bashrc`<br>
      
-        Adding the snippet below<br>
+        Add<br>
           `export JAVA_HOME=/opt/java` <br>
           `export PATH=/opt/java/bin:$PATH` <br>
     
-   -  Create script for automation proccess  or deploy of application<br>
+   -  Create script for automatic proccess on deploy <br>
    
         Script to copy war file to a /var/lib/tomcat7/webapps or other folder speficiqued in configuration.
