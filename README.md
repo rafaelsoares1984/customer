@@ -173,4 +173,4 @@ Application developed by Rafael Soares.
     
    -  Create script for automatic proccess of deploy <br>
    
-        Script to copy war file to a /var/lib/tomcat7/webapps or other folder speficiqued in configuration.
+        Create script to copy war file to a /var/lib/tomcat9/webapps folder or another folder speficied on setting.
